@@ -183,8 +183,8 @@ flowchart LR
     E --> F[Auth Server redirects back with Authorization Code]
     F --> G[SPA sends Code + Verifier to /token endpoint]
     G --> H[Auth Server verifies Code Challenge]
-    H --> I[Auth Server returns ID Token, Access Token (optional Refresh Token)]
-    I --> J[SPA stores tokens securely (e.g. in memory/cookies)]
+    H --> I[Auth Server returns ID Token, Access Token\n + optional Refresh Token]
+    I --> J[SPA stores tokens securely, e.g. memory or cookies]
     J --> K[User is now authenticated in SPA]
 
 ```
