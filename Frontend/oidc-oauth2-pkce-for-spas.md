@@ -74,7 +74,7 @@ Modern security best practices now **recommend against** using the Implicit Flow
 
 
 ```mermaid
-
+flowchart TB
     A[Start: SPA wants to initiate login] --> B[Generate Random Code Verifier]
     B --> C[Hash Verifier to get Code Challenge]
     C --> D[Send user to /authorize with Code Challenge, no secret]
@@ -175,7 +175,7 @@ Regardless of the method, it’s critical to apply **secure coding practices** t
 ## 7. Putting It All Together
 
 ```mermaid
-
+flowchart LR
     A[User Visits SPA] --> B[SPA checks if user is authenticated?]
     B -->|No| C[SPA generates Code Verifier & Challenge]
     C --> D[Redirect user to Auth Server /authorize]
