@@ -82,11 +82,11 @@ flowchart TB
     E --> F[Authorization Server redirects back with Authorization Code]
     F --> G[SPA exchanges Auth Code + Code Verifier for tokens]
     G --> H[Authorization Server verifies Verifier matches Challenge]
-    H --> I[If valid, issues ID Token, Access Token (and optional Refresh Token)]
+    H --> I[If valid, issues ID Token & Access Token\n plus optional Refresh Token]
     I --> J[SPA receives tokens and user is authenticated]
 
-```
 
+```
 **PKCE** (pronounced “pixie”) stands for **Proof Key for Code Exchange** and is defined in [RFC 7636](https://datatracker.ietf.org/doc/html/rfc7636). It was originally developed for native mobile apps, but it is now recognized as the **best practice** for **all public clients**, including SPAs.
 
 ### 4.1 How PKCE Works
@@ -183,11 +183,11 @@ flowchart LR
     E --> F[Auth Server redirects back with Authorization Code]
     F --> G[SPA sends Code + Verifier to /token endpoint]
     G --> H[Auth Server verifies Code Challenge]
-    H --> I[Auth Server returns ID Token, Access Token\n + optional Refresh Token]
-    I --> J[SPA stores tokens securely, e.g. memory or cookies]
+    H --> I[Auth Server returns ID Token, Access Token\nplus optional Refresh Token]
+    I --> J[SPA stores tokens securely, e.g. memory/cookies]
     J --> K[User is now authenticated in SPA]
-
 ```
+
 
 1. **User Initiates Login**  
    The SPA generates a random code verifier and a code challenge.
